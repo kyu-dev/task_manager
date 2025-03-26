@@ -18,6 +18,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton>Profil</SidebarMenuButton>
           </SidebarMenuItem>
+          {/* Ajoutez d'autres éléments de menu selon vos besoins */}
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>
