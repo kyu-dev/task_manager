@@ -4,7 +4,7 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 
-export const App = () => {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -14,3 +14,5 @@ export const App = () => {
     </Routes>
   );
 };
+
+export default App;
