@@ -1,14 +1,17 @@
-import React from 'react';
+import React from "react";
 import { Outlet } from "react-router-dom";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "../components/app-sidebar";
 
-const Layout = () => {
+export default function Layout({ children }) {
   return (
-    <>
+    <SidebarProvider>
+      <AppSidebar />
       <main>
-      <Outlet/>
+        <SidebarTrigger />
+        {children}
+        <Outlet />
       </main>
-    </>
-  )
+    </SidebarProvider>
+  );
 }
-
-export default Layout
