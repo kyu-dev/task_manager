@@ -7,10 +7,12 @@ export default function Layout({ children }) {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
+      <main className="flex-1">
         <SidebarTrigger />
-        {children}
-        <Outlet />
+        <div className="w-full">
+          {children}
+          <Outlet />
+        </div>
       </main>
     </SidebarProvider>
   );

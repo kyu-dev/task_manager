@@ -1,6 +1,6 @@
 import {
   Calendar,
-  Home,
+  LayoutDashboard,
   Inbox,
   Search,
   Settings,
@@ -26,9 +26,9 @@ import {
 
 const items = [
   {
-    title: "Home",
+    title: "Dashboard",
     url: "/",
-    icon: Home,
+    icon: LayoutDashboard,
   },
   {
     title: "Tasks",
@@ -99,7 +99,7 @@ export function AppSidebar() {
                             <SidebarMenuSubItem key={child.title}>
                               <SidebarMenuSubButton asChild>
                                 <a href={child.url}>
-                                  <child.icon/>
+                                  <child.icon />
                                   <span>{child.title}</span>
                                 </a>
                               </SidebarMenuSubButton>
