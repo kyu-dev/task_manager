@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import TaskTable from "@/components/TaskTable";
+import { motion } from "motion/react";
 
 const Dashboard = () => {
   const [date, setDate] = useState(new Date());
   const [tasks, setTasks] = useState([
-    // date fictive
+    // tache fictive pour tester l'ui
     {
       id: 1,
       title: "Faire le design",
@@ -55,15 +56,34 @@ const Dashboard = () => {
   });
 
   return (
-    <div className="p-10 flex gap-4">
-      <Calendar
-        mode="single"
-        selected={date}
-        onSelect={setDate}
-        className="rounded-md border"
-      />
-      <TaskTable tasks={filteredTasks} onTaskUpdate={handleTaskUpdate} />
-    </div>
+    <motion.div
+      className="p-10 flex gap-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="rounded-md border"
+        />
+      </motion.div>
+
+      <motion.div
+        initial={{ x: 50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="w-full"
+      >
+        <TaskTable tasks={filteredTasks} onTaskUpdate={handleTaskUpdate} />
+      </motion.div>
+    </motion.div>
   );
 };
 
