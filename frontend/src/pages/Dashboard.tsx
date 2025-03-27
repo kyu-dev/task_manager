@@ -1,10 +1,11 @@
-import {React, useState} from "react";
+import React, { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
-import TaskTable from "../components/TaskTable";
+import TaskTable from "@/components/TaskTable";
 
 const Dashboard = () => {
   const [date, setDate] = useState(new Date());
-  const [tasks, setTasks] = useState([   // date fictive
+  const [tasks, setTasks] = useState([
+    // date fictive
     {
       id: 1,
       title: "Faire le design",
